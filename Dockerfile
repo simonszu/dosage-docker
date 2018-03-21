@@ -16,6 +16,6 @@ COPY download.sh .
 COPY index.php .
 COPY run.sh .
 RUN chmod +x download.sh && chmod +x run.sh
-COPY tweetnest-cron /etc/cron.d/
+COPY dosage-cron /etc/cron.d/
 
 ENTRYPOINT ["/run.sh"]
