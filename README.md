@@ -8,7 +8,8 @@ Mount `/Comics` to your host, this is where dosage downloads stuff to.
 Point your webserver to this directory. 
 
 ## Add comics
+Start the container. 
 List them first:
-`docker run rm -ti <containerName> dosage -l`
+`docker exec -ti <containerName> dosage -l`
 Add a comic:
-`docker run --rm -ti -v /path/to/host/dir:/Comics <containerName> dosage AnotherComic`
+`docker exec -ti -v /path/to/host/dir:/Comics <containerName> dosage AnotherComic` - maybe the `--adult` option is required. In the Cronjob it is added automatically.
