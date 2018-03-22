@@ -19,5 +19,5 @@ cp /Comics/dailydose.rss /Comics/html/dailydose.rss
 cd /Comics/html
 
 # Fix the links
-sed -i 's@file://@@g' *.html
-sed -i 's@file://@@g' dailydose.rss
+sed -i 's@file:///Comics@@g' *.html
+#sed -i 's@file://@@g' dailydose.rss
