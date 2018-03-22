@@ -14,4 +14,4 @@ Start the container.
 List them first:
 `docker exec -ti <containerName> dosage -l`
 Add a comic:
-`docker exec -ti -v /path/to/host/dir:/Comics <containerName> dosage AnotherComic` - maybe the `--adult` option is required. In the Cronjob it is added automatically.
+`docker exec -ti <containerName> dosage AnotherComic` - maybe the `--adult` option is required. In the Cronjob it is added automatically.
