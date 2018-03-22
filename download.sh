@@ -3,7 +3,8 @@
 cd /
 
 # Fetch all comics, including adult ones and create html and rss pages
-/usr/local/bin/dosage -o html -o rss @ --adult
+#/usr/local/bin/dosage -o html -o rss @ --adult
+/usr/local/bin/dosage -o html @ --adult
 
 # Create index if not existing
 if [ ! -f /Comics/html/index.php ]; then
