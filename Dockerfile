@@ -11,9 +11,10 @@ RUN apt-get update \
     && cd / \
     && rm -r dosage
 
-RUN mkdir /Comics
+RUN mkdir /Comics && mkdir /templates
 COPY download.sh .
-COPY index.php .
+COPY redirect.php /templates
+COPY index.php /templates
 COPY run.sh .
 RUN chmod +x download.sh && chmod +x run.sh
 COPY dosage-cron /etc/cron.d/

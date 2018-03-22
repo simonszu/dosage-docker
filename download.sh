@@ -5,6 +5,11 @@ cd /
 # Fetch all comics, including adult ones and create html and rss pages
 /usr/local/bin/dosage -o html -o rss @ --adult
 
+# Create index if not existing
+if [ ! -f /Comics/html/index.php ]; then
+  cp /templates/index.php /Comics/html/index.php
+fi
+
 # Copy the RSS feed to the html folder
 #rm /Comics/html/dailydose.rss
 cp /Comics/dailydose.rss /Comics/html/dailydose.rss
