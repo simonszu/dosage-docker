@@ -1,1 +1,1 @@
-*/5 * * * root /bin/bash /download.sh #> /dev/null 2>&1
+0 7 * * * root /bin/bash /download.sh

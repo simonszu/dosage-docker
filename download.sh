@@ -13,7 +13,7 @@ fi
 
 # Copy the RSS feed to the html folder
 #rm /Comics/html/dailydose.rss
-cp /Comics/dailydose.rss /Comics/html/dailydose.rss
+#cp /Comics/dailydose.rss /Comics/html/dailydose.rss
 
 # Change to html folder
 cd /Comics/html
