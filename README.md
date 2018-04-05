@@ -8,6 +8,7 @@ This container is based on dosage git master, since it has the most recent scrap
 ## Usage
 Mount `/Comics` to your host, this is where dosage downloads stuff to.
 Point your webserver to this directory. 
+Set the `TZ` environment variable to your timezone. Default is `Europe/Berlin`.
 
 ## Add comics
 Start the container. 

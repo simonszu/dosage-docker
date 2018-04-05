@@ -1,5 +1,8 @@
 FROM python:stretch
 
+ENV TZ=Europe/Berlin
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+
 RUN apt-get update \
     && export DEBIAN_FRONTEND="noninteractive" \
     && apt-get install -y cron \
