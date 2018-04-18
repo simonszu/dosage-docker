@@ -21,5 +21,6 @@ COPY index.php /templates
 COPY run.sh .
 RUN chmod +x download.sh && chmod +x run.sh
 COPY dosage-cron /etc/cron.d/
+RUN chmod +x /etc/cron.d/dosage-cron
 
 ENTRYPOINT ["/run.sh"]
