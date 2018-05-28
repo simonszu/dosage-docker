@@ -4,4 +4,4 @@ if [ ! -f /Comics/index.php ]; then
   cp /templates/redirect.php /Comics/index.php
 fi
 
-cron -f && tail -f /var/log/cron.log
+/usr/sbin/crond -f -l 8
