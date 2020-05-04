@@ -13,3 +13,4 @@ script:
 after_success:
   - docker tag dosage:latest simonszu/dosage:latest
   - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+  - docker push simonszu/dosage:latest
