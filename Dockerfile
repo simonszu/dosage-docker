@@ -15,13 +15,11 @@ RUN apt-get update \
     && rm -r dosage
 
 RUN mkdir /Comics && mkdir /templates
-COPY download.sh .
+COPY download.sh /etc/cron.daily/download.sh
 COPY redirect.php /templates
 COPY index.php /templates
 COPY run.sh .
-RUN chmod +x download.sh && chmod +x run.sh
-COPY dosage-cron /etc/cron.d/
-RUN chmod +x /etc/cron.d/dosage-cron
+RUN chmod +x /etc/cron.daily/download.sh && chmod +x run.sh
 
 # Create the log file to be able to run tail
 RUN touch /var/log/cron.log
