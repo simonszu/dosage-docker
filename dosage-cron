@@ -1,1 +1,1 @@
-0 7 * * * root /bin/bash /download.sh >> /var/log/cron.log 2>&1
+0 7 * * * /bin/bash /download.sh >> /var/log/cron.log 2>&1
