@@ -1,18 +1,20 @@
-FROM python:buster
+FROM python:bullseye
 
 ENV TZ=Europe/Berlin
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
+# Install Cron
 RUN apt-get update \
     && export DEBIAN_FRONTEND="noninteractive" \
     && apt-get install -y cron \
-    && rm -rf /var/lib/apt/lists/* \
-    && git clone https://github.com/webcomics/dosage.git \
-    && cd dosage \
-    && pip install --no-cache-dir -r requirements.txt \
-    && /usr/local/bin/python setup.py install \
-    && cd / \
-    && rm -r dosage
+    && rm -rf /var/lib/apt/lists/*
+
+# Install pipx
+RUN python3 -m pip install --user pipx \
+    && python3 -m pipx ensurepath
+
+# Install dosage
+RUN pipx install "dosage[css,bash] @ git+https://github.com/webcomics/dosage.git"
 
 # Create dirs
 RUN mkdir /Comics && mkdir /templates
