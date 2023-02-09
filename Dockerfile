@@ -14,7 +14,7 @@ RUN python3 -m pip install --user pipx \
     && python3 -m pipx ensurepath
 
 # Install dosage
-RUN pipx install "dosage[css,bash] @ git+https://github.com/webcomics/dosage.git"
+RUN /root/.local/bin/pipx install "dosage[css,bash] @ git+https://github.com/webcomics/dosage.git"
 
 # Create dirs
 RUN mkdir /Comics && mkdir /templates
